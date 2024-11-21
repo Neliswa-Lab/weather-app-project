@@ -7,7 +7,7 @@ a {
     color: blue;
 }
 .weather-app {
-  background: grey;
+  background: #72A0C1;
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
@@ -43,7 +43,7 @@ main {
     justify-content: space-between;
 }
 header {
-    border-bottom: 1px grey solid;
+    border-bottom: 1px #72A0C1 solid;
     padding: 0 0 20px 0;
 }
 .search-form-button {
@@ -71,8 +71,8 @@ header {
     font-size: 27px;
 }
 footer {
-    border-top: 1px grey solid;
+    border-top: 1px #72A0C1 solid;
     padding: 20px 0 0 0;
     text-align: center;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.877);
 }
