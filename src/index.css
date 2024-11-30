@@ -36,7 +36,7 @@ main {
     font-weight: 200px;
 }
 .weather-details strong {
-    color: blueviolet;
+    color: rgb(138, 43, 226);
 }
 .weather-app-data {
     display: flex;
@@ -69,6 +69,33 @@ header {
 .weather-unit {
     margin-top: 15px;
     font-size: 27px;
+}
+.weather-forecast{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+.weather-forecast-date{
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(39, 33, 66, 0.89);
+    margin-bottom: 10px;
+}
+.weather-forecast-icon{
+text-align: center;
+font-size: 38px;
+
+}
+.weather-forecast-temperatures{
+    text-align: center;
+    color: rgb(138, 43, 226);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.weather-forecast-temperature{
+    padding: 0 10px;
 }
 footer {
     border-top: 1px #72A0C1 solid;
