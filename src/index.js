@@ -9,7 +9,7 @@ function updateCurrentTemperature(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#current-weather-icon");
 
-  console.log(response.data);
+
 
   cityElement.innerHTML = response.data.city;
 
@@ -19,6 +19,8 @@ function updateCurrentTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-weather-icon"></img>`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -37,7 +39,7 @@ function formatDate(date) {
   let day = days[date.getDay()];
 
   if (minutes < 10) {
-    minutes = `0${minutes}`; 
+    minutes = `0${minutes}`;
   }
   if (hours < 10) {
     hours = `0${hours}`;
@@ -57,7 +59,16 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "003898fo4cafab4efff03e135t07fe8f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
+}
+
+function displayForecast(response) {
+console.log(response.data);
+
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHtml = "";
 
@@ -77,7 +88,7 @@ function displayForecast() {
 </div>
 `;
   });
-   let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
@@ -85,4 +96,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Durban");
-displayForecast();
+
+
